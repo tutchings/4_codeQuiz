@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <header>
+        <a href="#" class="float-left high-score">High Scores</a>
+        <!-- <h1>JavaScript Code Quiz</h1> -->
+        <p class="float-right timer">Time: <span id="timer"></span></p>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="card" style="width: 30rem;">
+                <div class="card-body">
+                  <h5 class="card-title" id="question">JavaScript Code Quiz</h5>
+                  <p class="card-text" id="quiz-description">
+                      This JavaScript quiz has 10 questions and a time limit of 90 seconds. The quicker you 
+                      answer the questions, the higher your score will be but be careful, each wrong answer deducts
+                      10 seconds from your time. Try to beat the current high score of <span id="current-high-score">1014</span> set by <span id="current-record-holder">Lily & Chai</span>
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush" id="answerList" style="display:none;">
+                  <li class="list-group-item"></li>
+                  <li class="list-group-item"></li>
+                  <li class="list-group-item"></li>
+                  <li class="list-group-item"></li>
+                </ul>
+                <div class="card-body">
+                    <button type="button" class="btn btn-outline-info" id="startQuizBtn">Start Quiz</button>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
