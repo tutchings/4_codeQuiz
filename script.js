@@ -1,109 +1,111 @@
 var question = document.querySelector('#question');
+var quizDescription = document.querySelector('#quiz-description');
 var answerList = document.querySelector('#answerList');
 var startQuiz = document.querySelector('#startQuizBtn');
 var timer = document.querySelector('#timer');
 var timeRemaining = 90;
+var questionNumber = 0;
 
 var quizObjectArray = [
     {
-        question: 'queston 1',
+        question: 'This is question 1',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 2',
+        question: 'This is question 2',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 3',
+        question: 'This is question 3',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 4',
+        question: 'This is question 4',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 5',
+        question: 'This is question 5',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 7',
+        question: 'This is question 6',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 7',
+        question: 'This is question 7',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 8',
+        question: 'This is question 8',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 9',
+        question: 'This is question 9',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     },
     {
-        question: 'queston 10',
+        question: 'This is question 10',
         answers: [
             'answer0', 
             'answer1', 
             'answer2', 
             'answer3'
         ],
-        correctAnswer: 'answer3'
+        correctAnswer: '0'
     }
 ];
 
@@ -119,8 +121,32 @@ function time() {
     }, 1000)
 }
 
+function displayQuestion() {
+    question.textContent = quizObjectArray[questionNumber].question;
+    quizDescription.textContent = '';
+    for (var i = 0; i < 4; i++){
+        document.getElementById(i).textContent = quizObjectArray[questionNumber].answers[i];
+    }
+    answerList.style.display = '';
+}
+
 
 startQuiz.addEventListener('click', function(){
     time();
-    question.textContent = "Question 1";
+    displayQuestion();
+
+
+    answerList.addEventListener('click', function(event){
+        event.preventDefault();
+        if (event.target.matches("button")) {
+            var userAnswer = event.target.id;
+
+            if (userAnswer !== quizObjectArray[questionNumber].correctAnswer){
+                timeRemaining = timeRemaining - 10;
+            } else if (userAnswer === quizObjectArray[questionNumber].correctAnswer){
+                questionNumber++;
+                displayQuestion();
+            }
+        }
+    })
 });
