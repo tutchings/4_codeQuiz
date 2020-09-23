@@ -109,17 +109,7 @@ var quizObjectArray = [
     }
 ];
 
-function time() {
-    var countdownTimer = setInterval(function() {
-        timer.textContent = timeRemaining;
-        timeRemaining--;
 
-        if (timeRemaining === 0){
-            timer.textContent = '';
-            clearInterval(countdownTimer);
-        }
-    }, 1000)
-}
 
 function displayQuestion() {
     question.textContent = quizObjectArray[questionNumber].question;
@@ -130,9 +120,30 @@ function displayQuestion() {
     answerList.style.display = '';
 }
 
+function displayEndQuizPage(){
+    if (timeRemaining < 0){
+        timeRemaining = 0;
+    }
+    question.textContent = "Enter your name for high score page";
+    answerList.style.display = 'none';
+    quizDescription.textContent = "Your Score: " + timeRemaining;
+    startQuiz.textContent = "Submit Your Score";
+}
+
 
 startQuiz.addEventListener('click', function(){
-    time();
+
+    var countdownTimer = setInterval(function() {
+        timer.textContent = timeRemaining;
+        timeRemaining--;
+
+        if (timeRemaining <= 0 || questionNumber === 10){
+            displayEndQuizPage();
+            clearInterval(countdownTimer);
+            timer.textContent = '';
+        };
+    }, 1000);
+
     displayQuestion();
 
 
@@ -146,7 +157,9 @@ startQuiz.addEventListener('click', function(){
             } else if (userAnswer === quizObjectArray[questionNumber].correctAnswer){
                 questionNumber++;
                 displayQuestion();
-            }
-        }
-    })
+            };
+        };
+    });
+
+
 });
