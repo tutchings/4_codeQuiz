@@ -3,8 +3,19 @@ var quizDescription = document.querySelector('#quiz-description');
 var answerList = document.querySelector('#answerList');
 var startQuiz = document.querySelector('#startQuizBtn');
 var timer = document.querySelector('#timer');
+var submitNameForm = document.querySelector('#submit-name-form');
+var submitScore = document.querySelector('#enterHighScore');
+var nameInput = document.querySelector('#name-input');
+var errorMessage = document.querySelector('#error-message');
 var timeRemaining = 90;
 var questionNumber = 0;
+// var highScoreList = JSON.parse(localStorage.getItem('localStorageHighScoreList'));
+var highScoreList = [];
+console.log('highScoreList:', highScoreList)
+
+if ((localStorage.getItem('localStorageHighScoreList')) !== null){
+    highScoreList = JSON.parse(localStorage.getItem('localStorageHighScoreList'));
+}
 
 var quizObjectArray = [
     {
@@ -127,7 +138,30 @@ function displayEndQuizPage(){
     question.textContent = "Enter your name for high score page";
     answerList.style.display = 'none';
     quizDescription.textContent = "Your Score: " + timeRemaining;
-    startQuiz.textContent = "Submit Your Score";
+    submitNameForm.style.display = '';
+    submitScore.style.display = '';
+
+    submitScore.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var newHighScore = {
+            name: nameInput.value.trim(),
+            score: timeRemaining
+        };
+
+        if (newHighScore.name === ''){
+            errorMessage.textContent = "Please Enter Name";
+        }
+
+        if (newHighScore.name !== ''){
+            highScoreList.push(newHighScore);
+        }
+        console.log('newHighScore', newHighScore);
+        console.log('highScoreList:', highScoreList)
+        
+
+
+    });
 }
 
 
@@ -145,6 +179,7 @@ startQuiz.addEventListener('click', function(){
     }, 1000);
 
     displayQuestion();
+    startQuiz.style.display = 'none';
 
 
     answerList.addEventListener('click', function(event){

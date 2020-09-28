@@ -21,6 +21,7 @@
     <div class="container">
         <div class="main-content">
             <div class="card" style="width: 30rem;">
+
                 <div class="card-body">
                   <h5 class="card-title" id="question">JavaScript Code Quiz</h5>
                   <p class="card-text" id="quiz-description">
@@ -29,15 +30,30 @@
                       10 seconds from your time. Try to beat the current high score of <span id="current-high-score">1014</span> set by <span id="current-record-holder">Lily & Chai</span>
                   </p>
                 </div>
+
+                <div class="input-group flex-nowrap" id="submit-name-form" style="display:none;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">Name:</span>
+                  </div>
+                  <input type="text" class="form-control" id="name-input" placeholder="John/Jane Doe" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+
                 <ul class="list-group list-group-flush" id="answerList" style="display:none;">
                   <li class="list-group-item"><button type="button" class="btn btn-outline-info btn-lg btn-block" id="0"></button></li>
                   <li class="list-group-item"><button type="button" class="btn btn-outline-info btn-lg btn-block" id="1"></button></li>
                   <li class="list-group-item"><button type="button" class="btn btn-outline-info btn-lg btn-block" id="2"></button></li>
                   <li class="list-group-item"><button type="button" class="btn btn-outline-info btn-lg btn-block" id="3"></button></li>
                 </ul>
-                <div class="card-body">
-                    <button type="button" class="btn btn-outline-success" id="startQuizBtn">Start Quiz</button>
+
+                <div id="error-message" style="color: red; font-weight: bold; margin-top: 5px;">
+
                 </div>
+
+                <div class="card-body">
+                    <button type="button" class="btn btn-outline-success" id="startQuizBtn" style="display:;">Start Quiz</button>
+                    <button type="button" class="btn btn-outline-success" id="enterHighScore" style="display:none;">Submit Score</button>
+                </div>
+
               </div>
         </div>
     </div>
