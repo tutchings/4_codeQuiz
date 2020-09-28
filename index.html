@@ -5,32 +5,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS and style.css-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>JavaScript Code Quiz</title>
   </head>
-  <body>
+
+  <!-- runs function onload to add current record and record holder in quiz description -->
+  <body onload="displayCurrentHighScore()">
+
+    <!-- header displaying link to high scores page in top left and timer in top right -->
     <header>
-        <a href="#" class="float-left high-score">High Scores</a>
-        <!-- <h1>JavaScript Code Quiz</h1> -->
+        <a href="highScores.html" class="float-left high-score">High Scores</a>
         <p class="float-right timer">Time: <span id="timer"></span></p>
     </header>
 
+    <!-- container and main content divs -->
     <div class="container">
         <div class="main-content">
+
+            <!-- bootstrap card div -->
             <div class="card" style="width: 30rem;">
 
+                <!-- card body containing title/question and quiz description -->
                 <div class="card-body">
                   <h5 class="card-title" id="question">JavaScript Code Quiz</h5>
                   <p class="card-text" id="quiz-description">
                       This JavaScript quiz has 10 questions and a time limit of 90 seconds. The quicker you 
                       answer the questions, the higher your score will be but be careful, each wrong answer deducts
-                      10 seconds from your time. Try to beat the current high score of <span id="current-high-score">1014</span> set by <span id="current-record-holder">Lily & Chai</span>
+                      10 seconds from your time. Try to beat the current high score of <span id="current-high-score">_________</span> set by <span id="current-record-holder">_________</span>
                   </p>
                 </div>
 
+                <!-- input to enter name for high score page -->
+                <!-- does not display until quiz is over -->
                 <div class="input-group flex-nowrap" id="submit-name-form" style="display:none;">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="addon-wrapping">Name:</span>
@@ -38,6 +47,8 @@
                   <input type="text" class="form-control" id="name-input" placeholder="John/Jane Doe" aria-label="Username" aria-describedby="addon-wrapping">
                 </div>
 
+                <!-- unordered list to display the answer choices each question of the quiz -->
+                <!-- only displays when a question is being displayed -->
                 <ul class="list-group list-group-flush" id="answerList" style="display:none;">
                   <li class="list-group-item"><button type="button" class="btn btn-outline-info btn-lg btn-block" id="0"></button></li>
                   <li class="list-group-item"><button type="button" class="btn btn-outline-info btn-lg btn-block" id="1"></button></li>
@@ -45,24 +56,27 @@
                   <li class="list-group-item"><button type="button" class="btn btn-outline-info btn-lg btn-block" id="3"></button></li>
                 </ul>
 
-                <div id="error-message" style="color: red; font-weight: bold; margin-top: 5px;">
+                <!-- error message div to allow an error message if user enters empty name input field for high score  -->
+                <div id="error-message" style="color: red; font-weight: bold; margin-top: 5px;"></div>
 
-                </div>
-
+                <!-- start quiz button only displays on page load -->
+                <!-- submit score button that displays beneath name input field when quiz is complete -->
                 <div class="card-body">
                     <button type="button" class="btn btn-outline-success" id="startQuizBtn" style="display:;">Start Quiz</button>
                     <button type="button" class="btn btn-outline-success" id="enterHighScore" style="display:none;">Submit Score</button>
                 </div>
 
-              </div>
-        </div>
-    </div>
+              </div> <!-- end bootstrap card div -->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        </div> <!-- end main content div -->
+    </div> <!-- end container div -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS, then script.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
   </body>
 </html>
