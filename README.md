@@ -10,8 +10,7 @@ I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
 ```
 ## Link to Live Project and Project Image
-![Screenshot of Final Project]
-(completedProjectImage.PNG)
+![Screenshot of Final Project](https://github.com/tutchings/4_codeQuiz/blob/master/completedProjectImage.PNG)
 
 [Deployed Website Link](https://tutchings.github.io/4_codeQuiz/index.html)
 
