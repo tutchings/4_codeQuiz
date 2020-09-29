@@ -16,102 +16,102 @@ var questionNumber = 0;
 var highScoreList = [];
 var quizObjectArray = [
     {
-        question: 'This is question 1',
+        question: 'What is an object enclosed with in JavaScript?',
         answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
+            '{Brackets}', //Correct Answer
+            '(Parenthesis)', 
+            '"Quotation Marks"', 
+            '[Square Brackets]'
         ],
         correctAnswer: '0'
     },
     {
-        question: 'This is question 2',
+        question: 'When using a querySelector, what symbol signifies an ID is being targeted?',
         answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
+            'Period (.)', 
+            'Star (*)', 
+            'Pound (#)', //Correct Answer
+            'Money Sign ($)'
+        ],
+        correctAnswer: '2'
+    },
+    {
+        question: 'Given that x = 14, which of the following would return false?',
+        answers: [
+            'x == 14', 
+            'x === "14"', //Correct Answer
+            'x === 14', 
+            'x == "14"'
+        ],
+        correctAnswer: '1'
+    },
+    {
+        question: 'Which of the following JavaScript array methods adds a new element to the end of an array?',
+        answers: [
+            'push()', //Correct Answer
+            'unshift()', 
+            'join()', 
+            'toString()'
         ],
         correctAnswer: '0'
     },
     {
-        question: 'This is question 3',
+        question: 'Given the following array, var superheroes = ["Iron Man", "Black Panther", "Hulk", "Thor"], what superhero is found at superheroes[1]?',
         answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
+            'Hulk', 
+            'Thor', 
+            'Iron Man', 
+            'Black Panther' //Correct Answer
         ],
-        correctAnswer: '0'
+        correctAnswer: '3'
     },
     {
-        question: 'This is question 4',
+        question: 'What will be returned from the following code: console.log(typeof "10");?',
         answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
+            '"10"', 
+            '"string"', //Correct Answer
+            '"undefined"', 
+            '"number"'
         ],
-        correctAnswer: '0'
+        correctAnswer: '1'
     },
     {
-        question: 'This is question 5',
+        question: 'Which of the following is not a type of loop used in JavaScript?',
         answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
+            'while Loop', 
+            'forEach Loop', 
+            'for Loop', 
+            'go-while Loop' //Correct Answer
         ],
-        correctAnswer: '0'
+        correctAnswer: '3'
     },
     {
-        question: 'This is question 6',
+        question: 'Which symbol serves as the identifier or shortcut for "jQuery"?',
         answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
+            'Star (*)', 
+            'Money Sign ($)', //Correct Answer
+            'Pound (#)', 
+            'Period (.)'
         ],
-        correctAnswer: '0'
+        correctAnswer: '1' 
     },
     {
-        question: 'This is question 7',
+        question: 'What is an array enclosed with in JavaScript',
         answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
+            '{Brackets}', 
+            '(Parenthesis)', 
+            '"Quotation Marks"', 
+            '[Square Brackets]' //Correct Answer
         ],
-        correctAnswer: '0'
+        correctAnswer: '3'
     },
     {
-        question: 'This is question 8',
+        question: 'Given the following array, var disneyParks = ["Magic Kingdom", "Epcot", "Animal Kingdom", "Hollywood Studios"], what would be returned from the following line of code: console.log(disneyParks.length);?',
         answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
-        ],
-        correctAnswer: '0'
-    },
-    {
-        question: 'This is question 9',
-        answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
-        ],
-        correctAnswer: '0'
-    },
-    {
-        question: 'This is question 10',
-        answers: [
-            'answer0', 
-            'answer1', 
-            'answer2', 
-            'answer3'
+            '4', //Correct Answer
+            'null', 
+            '3', 
+            'undefined'
         ],
         correctAnswer: '0'
     }
