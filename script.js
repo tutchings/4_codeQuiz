@@ -273,8 +273,10 @@ startQuiz.addEventListener('click', function(){
             // if user selects correct answer, increment question number by 1 and display next question
             if (userAnswer !== quizObjectArray[questionNumber].correctAnswer){
                 timeRemaining = timeRemaining - 10;
+                errorMessage.textContent = "Incorrect! 10 second penalty!";
             } else if (userAnswer === quizObjectArray[questionNumber].correctAnswer){
                 questionNumber++;
+                errorMessage.textContent = "";
                 displayQuestion();
             };//end if else conditional
 
