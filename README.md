@@ -14,6 +14,13 @@ SO THAT I can gauge my progress compared to my peers
 
 [Deployed Website Link](https://tutchings.github.io/4_codeQuiz/index.html)
 
+## Languages/Frameworks
+
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+
 ## Acceptance Criteria
 
 ```
